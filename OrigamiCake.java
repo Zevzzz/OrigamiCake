@@ -6,14 +6,25 @@ private String colorOfCake;
 private ArrayList toppings; 
 private int numberOfFaces;
 private int numberOfFolds;
-private double[] dimensions;
+private double[] dimensions = {0, 0, 0}; 
 
-public OrigamiCake(String colorOfCake, ArrayList toppings, int numberOfFaces, int numberOfFolds, double[] dimensions){
+/**
+ * @param colorOfCake Main color of cupcake. 
+ * @param numberOfFaces Number of total faces, where a face is an area who's color differs from that of those around it. 
+ * @param numberOfFolds Number of total folds required to create cupcake. 
+ * @param length 
+ * @param width 
+ * @param height 
+ */
+
+public OrigamiCake(String colorOfCake, int numberOfFaces, int numberOfFolds, double length, double width, double height){
     this.colorOfCake = colorOfCake;
-    this.toppings = toppings;
     this.numberOfFaces = numberOfFaces;
     this.numberOfFolds = numberOfFolds;
-    this.dimensions = dimensions;
+    dimensions[0] = length;
+    dimensions[1] = width;
+    dimensions[2] = height;
+
 }
 
 // Color
