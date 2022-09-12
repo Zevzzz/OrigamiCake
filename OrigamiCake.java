@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class OrigamiCake{
+public class OrigamiCake extends OrigamiCakes{
 
 private String colorOfCake;
 private ArrayList toppings; 
@@ -12,12 +12,24 @@ private double[] dimensions = {0, 0, 0};
  * @param colorOfCake Main color of cupcake. 
  * @param numberOfFaces Number of total faces, where a face is an area who's color differs from that of those around it. 
  * @param numberOfFolds Number of total folds required to create cupcake. 
- * @param length 
+ * @param length Longest horizonal length of cupcake at its longest
  * @param width 
  * @param height 
  */
 
 public OrigamiCake(String colorOfCake, int numberOfFaces, int numberOfFolds, double length, double width, double height){
+    this.colorOfCake = colorOfCake;
+    this.numberOfFaces = numberOfFaces;
+    this.numberOfFolds = numberOfFolds;
+    dimensions[0] = length;
+    dimensions[1] = width;
+    dimensions[2] = height;
+
+}
+
+
+
+public void setAllParams(String colorOfCake, int numberOfFaces, int numberOfFolds, double length, double width, double height){
     this.colorOfCake = colorOfCake;
     this.numberOfFaces = numberOfFaces;
     this.numberOfFolds = numberOfFolds;
@@ -76,10 +88,10 @@ public double[] getDimensions(){
     return dimensions;
 }
 
-public void setDimensions(double[] newDimensions){
-    for (int i = 0; i < newDimensions.length; i++){
-        dimensions[i] = newDimensions[i];
-    }
+public void setDimensions(double length, double width, double height){
+    dimensions[0] = length;
+    dimensions[1] = width;
+    dimensions[2] = height;
 }
 
 
