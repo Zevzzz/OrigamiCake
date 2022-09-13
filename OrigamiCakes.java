@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class OrigamiCakes{
 
-    ArrayList<OrigamiCake> origamiCakes;
+    ArrayList<OrigamiCake> origamiCakes = new <OrigamiCake>ArrayList();
     int cakeNum;
 
     // Overloaded Constructors
