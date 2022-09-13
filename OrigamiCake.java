@@ -10,7 +10,7 @@ private double[] dimensions = {0, 0, 0};
 
 /**
  * @param colorOfCake Main color of cupcake. 
- * @param numberOfFaces Number of total faces, where a face is an area who's color differs from that of those around it. 
+ * @param numberOfFaces Number of total drawn faces. 
  * @param numberOfFolds Number of total folds required to create cupcake. 
  * @param length Longest horizonal length of cupcake in centimeters (cm)
  * @param width Longest thickness of cupcake in centimeters (cm)
@@ -28,7 +28,7 @@ public OrigamiCake(String colorOfCake, int numberOfFaces, int numberOfFolds, dou
 }
 
 
-
+/**@param colorOfCake Color of the cake */
 public void setAllParams(String colorOfCake, int numberOfFaces, int numberOfFolds, double length, double width, double height){
     this.colorOfCake = colorOfCake;
     this.numberOfFaces = numberOfFaces;

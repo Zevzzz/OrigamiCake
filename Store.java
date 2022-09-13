@@ -9,23 +9,23 @@ public class Store{
         // OrigamiCake origamiCake = new OrigamiCake("Blue", 2, 7, 3.0, 4.0, 5.0);
 
 
-        OrigamiCakes origamiCakes = new OrigamiCakes(1);
+        OrigamiCakes origamiCakes = new OrigamiCakes(3);
 
         // Donson
         ArrayList<String> toppingsD = new ArrayList<String>(Arrays.asList("Sticky Note", "The Face of G O D"));
         origamiCakes.cake(0).setColorOfCake("Blue");
-        origamiCakes.cake(0).setDimensions(7.8, 0.2, 7.1);
-        origamiCakes.cake(0).setNumberOfFaces(9);
+        origamiCakes.cake(0).setDimensions(8.6, 0.2, 7.9);
+        origamiCakes.cake(0).setNumberOfFaces(1);
         origamiCakes.cake(0).setNumberOfFolds(10);
         origamiCakes.cake(0).setToppings(toppingsD);
 
-        // // Percy
-        // ArrayList<String> toppingsP = new ArrayList<String>(Arrays.asList("Sprinkles", "Frosting"));
-        // origamiCake.setAllParams(colorOfCake, numberOfFaces, numberOfFolds, length, width, height);
+        // Percy
+        ArrayList<String> toppingsP = new ArrayList<String>(Arrays.asList("White Frosting", "Orange Frosting", "Blue  Frosting", "Pink  Frosting"));
+        origamiCakes.cake(1).setAllParams("Red", 0, 10, 10.5, 0.1, 6.1);
 
         // // Aaron Liang
-        // ArrayList<String> toppingsA = new ArrayList<String>(Arrays.asList("Pink Face Sprinkles", "White Frosting"));
-        // origamiCake.setAllParams("Purple", numberOfFaces, 20, length, width, height);
+        ArrayList<String> toppingsA = new ArrayList<String>(Arrays.asList("Pink Face Sprinkles", "White Frosting"));
+        origamiCakes.cake(2).setAllParams("Purple", 16, 20, 13.05, 0.15, 7.2);
 
 
         // Get all Cake Info
