@@ -22,24 +22,16 @@ public class Store{
         // Percy
         ArrayList<String> toppingsP = new ArrayList<String>(Arrays.asList("White Frosting", "Orange Frosting", "Blue  Frosting", "Pink  Frosting"));
         origamiCakes.cake(1).setAllParams("Red", 0, 10, 10.5, 0.1, 6.1);
+        origamiCakes.cake(1).setToppings(toppingsP);
 
         // // Aaron Liang
         ArrayList<String> toppingsA = new ArrayList<String>(Arrays.asList("Pink Face Sprinkles", "White Frosting"));
         origamiCakes.cake(2).setAllParams("Purple", 16, 20, 13.05, 0.15, 7.2);
+        origamiCakes.cake(2).setToppings(toppingsA);
 
 
         // Get all Cake Info
-        for (int i = 0; i < origamiCakes.getLen(); i++){
-            System.out.println(origamiCakes.getCake(i).getColorOfCake());
-            System.out.println(origamiCakes.getCake(i).getNumberOfFaces());
-            System.out.println(origamiCakes.getCake(i).getNumberOfFolds());
-            for (int j = 0; j < origamiCakes.getCake(i).getToppings().size(); j++){
-                System.out.println(origamiCakes.getCake(i).getToppings().get(j));
-            }
-            for (int j = 0; j < origamiCakes.getCake(i).getDimensions().length; j++){
-                System.out.println(origamiCakes.getCake(i).getDimensions()[j]);
-            }
-        }
+        System.out.println(origamiCakes.getAllInfo());
         
 
     }
