@@ -94,5 +94,48 @@ public void setDimensions(double length, double width, double height){
     dimensions[2] = height;
 }
 
+@Override
+public String toString() {
+    String toStringReturn = getColorOfCake().substring(0, 1).toUpperCase() + getColorOfCake().substring(1);
+    if (numberOfFaces == 1 && numberOfFolds == 1) 
+        toStringReturn += " cupcake with " + numberOfFaces + " face and " + numberOfFolds + " fold. :)";
+    else if (numberOfFaces == 1)
+        toStringReturn += " cupcake with " + numberOfFaces + " face and " + numberOfFolds + " folds. :)";
+    else if (numberOfFolds == 1)
+        toStringReturn += " cupcake with " + numberOfFaces + " faces and " + numberOfFolds + " fold. :)";
+    else 
+        toStringReturn += " cupcake with " + numberOfFaces + " faces and " + numberOfFolds + " folds. :)";
+
+    return toStringReturn;
+}
+
+
+public static boolean isInTolerance(double a, double b) {
+    return (Math.abs(a - b) <= (a + b) /  2 * 0.1);
+}
+
+@Override
+public boolean equals(OrigamiCake cake) {
+    double[] dimensionsA = this.getDimensions();
+    double[] dimensionsB = cake.getDimensions();
+
+    if (dimensionsA.length == dimensionsB.length &&
+     this.getColorOfCake() == cake.getColorOfCake() &&
+      this.getNumberOfFaces() == cake.getNumberOfFaces() &&
+       this.getNumberOfFolds() == cake.getNumberOfFaces()) {
+        for (int i = 0; i < dimensionsA.length; i++) {
+            if (!isInTolerance(dimensionsA[i], dimensionsB[i]))
+                return false;
+        }
+    }
+    else {
+        return false;
+    }
+    return true;
+
+
+}
+
+
 
 }

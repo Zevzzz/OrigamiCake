@@ -1,38 +1,84 @@
 
-import java.util.ArrayList;
-import java.util.Arrays;
+public class Store {
+  public static void main(String[] args) {
+    int x = 1000;
+    Cookie yummyCookie = new Cookie("vanilla", 1.3, 0);
 
-public class Store{
+    System.out.println(yummyCookie); 
 
-    public static void main(String[] args){
-        // ArrayList<String> toppingsTest = new ArrayList<String>(Arrays.asList("Sprinkles", "Frosting"));
-        // OrigamiCake origamiCake = new OrigamiCake("Blue", 2, 7, 3.0, 4.0, 5.0);
-
-
-        OrigamiCakes origamiCakes = new OrigamiCakes(3);
-
-        // Donson
-        ArrayList<String> toppingsD = new ArrayList<String>(Arrays.asList("Sticky Note", "The Face of G O D"));
-        origamiCakes.cake(0).setColorOfCake("Blue");
-        origamiCakes.cake(0).setDimensions(8.6, 0.2, 7.9);
-        origamiCakes.cake(0).setNumberOfFaces(1);
-        origamiCakes.cake(0).setNumberOfFolds(10);
-        origamiCakes.cake(0).setToppings(toppingsD);
-
-        // Percy
-        ArrayList<String> toppingsP = new ArrayList<String>(Arrays.asList("White Frosting", "Orange Frosting", "Blue  Frosting", "Pink  Frosting"));
-        origamiCakes.cake(1).setAllParams("Red", 0, 10, 10.5, 0.1, 6.1);
-        origamiCakes.cake(1).setToppings(toppingsP);
-
-        // // Aaron Liang
-        ArrayList<String> toppingsA = new ArrayList<String>(Arrays.asList("Pink Face Sprinkles", "White Frosting"));
-        origamiCakes.cake(2).setAllParams("Purple", 16, 20, 13.05, 0.15, 7.2);
-        origamiCakes.cake(2).setToppings(toppingsA);
+    Cookie yummyCookie1 = Cookie.makeCookie("vanilla", 0, 0);
+    System.out.println(yummyCookie1);
+    Cookie yummyCookie2 = Cookie.makeCookie("vanilla", 0, 0);
+    System.out.println(yummyCookie2);
+    Cookie yummyCookie3 = Cookie.makeCookie("vanilla", 0, 0);
+    System.out.println(yummyCookie3);
+    System.out.println(yummyCookie.randomCookie(yummyCookie1));
+    
+    System.out.println("- - - - - - - - - - - - -");
+    System.out.println(yummyCookie.randomCookie(yummyCookie1).toString());
+    // System.out.println(yummyCookie.randomCookie(yummyCookie1).length());
 
 
-        // Get all Cake Info
-        System.out.println(origamiCakes.getAllInfo());
-        
+  }
 
-    }
+  /*
+   * Cake chocolateCake = new Cake(); // it will find the constructor in the Cake
+   * class and run it
+   * System.out.println("chocolateCake: " + chocolateCake);
+   * 
+   * 
+   * //chocolateCake.print();
+   * 
+   * 
+   * 
+   * Cake letsMakeACake = new Cake(4);
+   * //letsMakeACake.print();
+   * System.out.println("With object" + chocolateCake.getOnePlusOne());
+   * System.out.println("Without object" + Cake.getOnePlusOne());
+   * 
+   * Cookie yummyCookie = new Cookie("vanilla", 1.3 , 0);
+   * yummyCookie.smashCookie();
+   * yummyCookie.showStatus();
+   * System.out.println(yummyCookie);
+   * 
+   * Cake whereIsMyCake = chocolateCake;
+   * System.out.println("whereIsMyCake: " + whereIsMyCake);
+   * 
+   * chocolateCake = null;
+   * whereIsMyCake = null;
+   * System.out.println("chocolateCake: " + chocolateCake);
+   * System.out.println("whereIsMyCake: " + whereIsMyCake);
+   * chocolateCake = whereIsMyCake;
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   * System.out.println("The flavor of the cookie is: " +
+   * yummyCookie.getFlavor()+".");
+   * String lastFlavor = yummyCookie.getFlavor();
+   * System.out.println("What is stored in lastFlavor? It is... " + lastFlavor +
+   * "!");
+   * 
+   * lastFlavor = "chocolate"; // this will not change the flavor of yummyCookie
+   */
+
 }
+
+/*
+ * new Cake();
+ * new Cake();
+ * 
+ * new Cake(6); // it will find the constructor in Cake class with an INT and
+ * run it
+ * 
+ * new Cake(1.5); // it will find the constructor with a DOUBLE and run it
+ * 
+ * new Cake(4, 5); // passing in the actual parameters of 4 and 5
+ * 
+ * new Cookie(3);
+ */

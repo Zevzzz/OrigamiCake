@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 public class OrigamiCakes{
 
-    ArrayList<OrigamiCake> origamiCakes = new <OrigamiCake>ArrayList();
-    int cakeNum;
-    String returnStr = "";
+    private ArrayList<OrigamiCake> origamiCakes = new <OrigamiCake>ArrayList();
+    private int cakeNum;
+    private String returnStr = "";
 
     // Overloaded Constructors
     public OrigamiCakes(){}
@@ -18,7 +18,7 @@ public class OrigamiCakes{
         this.cakeNum = cakeNum;
 
         for (int i = 0; i < cakeNum; i++){
-            origamiCakes.add(new OrigamiCake("NONE", 0, 0, 0, 0, 0));
+            origamiCakes.add(new OrigamiCake("NONE", 0, 0, false, 0, 0, 0));
         }
     }
 
@@ -26,7 +26,6 @@ public class OrigamiCakes{
     public ArrayList getOrigamiCakes(){
         return origamiCakes;
     }
-
     public OrigamiCake getOrigamiCake(int index){
         return origamiCakes.get(index);
     }
@@ -40,18 +39,27 @@ public class OrigamiCakes{
     public int getLen(){
         return cakeNum;
     }
-
     
-    public String getAllInfo(){
+    public void setCake(int i, OrigamiCake val){
+        origamiCakes.set(i, val);
+    }
+    
+    @Override
+    public String toString(){
         for (int i = 0; i < getLen(); i++){
             returnStr += "**************************************************\n";
 
             returnStr += cake(i).getColorOfCake() + " cake's color: " + (getCake(i).getColorOfCake()) + "\n";
             returnStr += cake(i).getColorOfCake() + " cake's number of faces: " + (getCake(i).getNumberOfFaces()) + "\n";
             returnStr += cake(i).getColorOfCake() + " cake's number of folds: " + (getCake(i).getNumberOfFolds()) + "\n";
+            if (getCake(i).getToppings() != null) {
             for (int j = 0; j < getCake(i).getToppings().size(); j++){
                 returnStr += cake(i).getColorOfCake() + " cake's topping number " + (j + 1) + ": " + (getCake(i).getToppings().get(j)) + "\n";
             }
+            } else {
+                returnStr += "No toppings present. \n";
+            }
+        
             returnStr += cake(i).getColorOfCake() + " cake's length: " + cake(i).getDimensions()[0] + "\n";
             returnStr += cake(i).getColorOfCake() + " cake's width: " + cake(i).getDimensions()[1] + "\n";
             returnStr += cake(i).getColorOfCake() + " cake's height: " + cake(i).getDimensions()[2] + "\n";
@@ -61,16 +69,22 @@ public class OrigamiCakes{
 
         return returnStr;
     }
-
-    public String getAllToStrings() {
-        String allToStringReturn = "";
-        for (int i = 0; i < getLen(); i++ ) {
-            allToStringReturn += cake(i).toString() + "\n";
+    
+    public OrigamiCakes copyOrigamiCakes() {
+        OrigamiCakes returnCakes = new OrigamiCakes(cakeNum);
+        for (int i = 0; i < cakeNum; i++) {
+            returnCakes.setCake(i, this.cake(i).copyCake());
         }
-        return allToStringReturn;
+        return returnCakes;
     }
-
-
+       
+    public static OrigamiCakes makeRandomCakes(int len) {
+        OrigamiCakes randCakes = new OrigamiCakes(len);
+        for (int i = 0; i < len; i++) {
+            randCakes.setCake(i, OrigamiCake.makeRandomCake());
+        }
+        return randCakes;
+    }
 
 
 }
